@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Thinkphp,PHPUnit,单元测试," />
+  <meta name="keywords" content="Thinkphp,Ubuntu,PHP扩展,YAR,RPC," />
 
 
 
@@ -94,29 +94,41 @@
 
 
 
-<meta name="description" content="准备
-Thinkphp版本：3.2.3安装工具： composerPHPUnit：snowair/think-phpunitPHP IDE：PHPStrom
+<meta name="description" content="Yar 是一个轻量级, 高效的RPC框架, 它提供了一种简单方法来让PHP项目之间可以互相远程调用对方的本地方法. 并且Yar也提供了并行调用的能力. 可以支持同时调用多个远程服务的方法.
 
-使用Composer安装单元测试辅助类直接编辑Thinkphp根目录下的composer.json，添加123456&amp;quot;autoload&amp;quot;: &amp;#123;	&amp;quot;classmap&amp;quot;: [&amp;quot;Appl">
+准备LAMP环境
+
+Linux：Ubuntu 14.04
+Apache：Apache 2.4
+Mysql：Mysql 5.5
+PHP： PHP 5.6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Thinkphp：配置PHPUnit单元测试">
-<meta property="og:url" content="http://dffuture.github.io/2016/05/22/Thinkphp：配置PHPUnit单元测试/index.html">
+<meta property="og:title" content="安装PHP扩展：YAR——Ubuntu篇">
+<meta property="og:url" content="http://dffuture.github.io/2016/05/24/安装PHP扩展：YAR——Ubuntu篇/index.html">
 <meta property="og:site_name" content="DFFuture">
-<meta property="og:description" content="准备
-Thinkphp版本：3.2.3安装工具： composerPHPUnit：snowair/think-phpunitPHP IDE：PHPStrom
+<meta property="og:description" content="Yar 是一个轻量级, 高效的RPC框架, 它提供了一种简单方法来让PHP项目之间可以互相远程调用对方的本地方法. 并且Yar也提供了并行调用的能力. 可以支持同时调用多个远程服务的方法.
 
-使用Composer安装单元测试辅助类直接编辑Thinkphp根目录下的composer.json，添加123456&amp;quot;autoload&amp;quot;: &amp;#123;	&amp;quot;classmap&amp;quot;: [&amp;quot;Appl">
-<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6cad6f69gw1f440yzhsj1j20su0jiq40.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6cad6f69gw1f440yz7o8zj20su0jitae.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6cad6f69gw1f442ho5svej20od0913yv.jpg">
-<meta property="og:updated_time" content="2016-05-22T05:00:40.148Z">
+准备LAMP环境
+
+Linux：Ubuntu 14.04
+Apache：Apache 2.4
+Mysql：Mysql 5.5
+PHP： PHP 5.6">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6cad6f69gw1f468ljoixgj20re0jqtdg.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6cad6f69gw1f468lk95h2j20wm0dsn33.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6cad6f69gw1f468lkma54j20wo0520u4.jpg">
+<meta property="og:updated_time" content="2016-05-24T02:08:31.424Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Thinkphp：配置PHPUnit单元测试">
-<meta name="twitter:description" content="准备
-Thinkphp版本：3.2.3安装工具： composerPHPUnit：snowair/think-phpunitPHP IDE：PHPStrom
+<meta name="twitter:title" content="安装PHP扩展：YAR——Ubuntu篇">
+<meta name="twitter:description" content="Yar 是一个轻量级, 高效的RPC框架, 它提供了一种简单方法来让PHP项目之间可以互相远程调用对方的本地方法. 并且Yar也提供了并行调用的能力. 可以支持同时调用多个远程服务的方法.
 
-使用Composer安装单元测试辅助类直接编辑Thinkphp根目录下的composer.json，添加123456&amp;quot;autoload&amp;quot;: &amp;#123;	&amp;quot;classmap&amp;quot;: [&amp;quot;Appl">
-<meta name="twitter:image" content="http://ww3.sinaimg.cn/mw690/6cad6f69gw1f440yzhsj1j20su0jiq40.jpg">
+准备LAMP环境
+
+Linux：Ubuntu 14.04
+Apache：Apache 2.4
+Mysql：Mysql 5.5
+PHP： PHP 5.6">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/6cad6f69gw1f468ljoixgj20re0jqtdg.jpg">
 
 
 
@@ -134,7 +146,7 @@ Thinkphp版本：3.2.3安装工具： composerPHPUnit：snowair/think-phpunitPHP
   };
 </script>
 
-  <title> Thinkphp：配置PHPUnit单元测试 | DFFuture </title>
+  <title> 安装PHP扩展：YAR——Ubuntu篇 | DFFuture </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -307,7 +319,7 @@ Thinkphp版本：3.2.3安装工具： composerPHPUnit：snowair/think-phpunitPHP
             
             
               
-                Thinkphp：配置PHPUnit单元测试
+                安装PHP扩展：YAR——Ubuntu篇
               
             
           </h1>
@@ -319,8 +331,8 @@ Thinkphp版本：3.2.3安装工具： composerPHPUnit：snowair/think-phpunitPHP
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-22T12:54:26+08:00" content="2016-05-22">
-              2016-05-22
+            <time itemprop="dateCreated" datetime="2016-05-24T09:56:46+08:00" content="2016-05-24">
+              2016-05-24
             </time>
           </span>
 
@@ -333,8 +345,8 @@ Thinkphp版本：3.2.3安装工具： composerPHPUnit：snowair/think-phpunitPHP
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Thinkphp/" itemprop="url" rel="index">
-                    <span itemprop="name">Thinkphp</span>
+                  <a href="/categories/RPC/" itemprop="url" rel="index">
+                    <span itemprop="name">RPC</span>
                   </a>
                 </span>
 
@@ -349,8 +361,8 @@ Thinkphp版本：3.2.3安装工具： composerPHPUnit：snowair/think-phpunitPHP
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/22/Thinkphp：配置PHPUnit单元测试/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/22/Thinkphp：配置PHPUnit单元测试/" itemprop="commentsCount"></span>
+                <a href="/2016/05/24/安装PHP扩展：YAR——Ubuntu篇/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/24/安装PHP扩展：YAR——Ubuntu篇/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -378,23 +390,49 @@ Thinkphp版本：3.2.3安装工具： composerPHPUnit：snowair/think-phpunitPHP
       
 
       
-        <h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><blockquote>
-<p>Thinkphp版本：3.2.3<br>安装工具： <a href="http://www.phpcomposer.com/" target="_blank" rel="external">composer</a><br>PHPUnit：<a href="https://github.com/snowair/think-phpunit" target="_blank" rel="external">snowair/think-phpunit</a><br>PHP IDE：PHPStrom</p>
+        <blockquote>
+<p><a href="http://php.net/manual/zh/book.yar.php" target="_blank" rel="external">Yar</a> 是一个轻量级, 高效的RPC框架, 它提供了一种简单方法来让PHP项目之间可以互相远程调用对方的本地方法. 并且Yar也提供了并行调用的能力. 可以支持同时调用多个远程服务的方法.</p>
 </blockquote>
-<h3 id="使用Composer安装单元测试辅助类"><a href="#使用Composer安装单元测试辅助类" class="headerlink" title="使用Composer安装单元测试辅助类"></a>使用Composer安装单元测试辅助类</h3><p>直接编辑Thinkphp根目录下的<code>composer.json</code>，添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;autoload&quot;: &#123;</span><br><span class="line">	&quot;classmap&quot;: [&quot;Application&quot;,&quot;ThinkPHP/Library&quot;]</span><br><span class="line">&#125;,</span><br><span class="line">&quot;require-dev&quot;: &#123;</span><br><span class="line">	&quot;snowair/think-phpunit&quot;: &quot;dev-master&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
-<p>在根目录下打开bash界面，首次安装输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ composer install</span><br></pre></td></tr></table></figure></p>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><h4 id="LAMP环境"><a href="#LAMP环境" class="headerlink" title="LAMP环境"></a>LAMP环境</h4><blockquote>
+<ul>
+<li>Linux：Ubuntu 14.04</li>
+<li>Apache：Apache 2.4</li>
+<li>Mysql：Mysql 5.5</li>
+<li>PHP： PHP 5.6</li>
+</ul>
+</blockquote>
 <a id="more"></a>
-<p>更新输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ composer update</span><br></pre></td></tr></table></figure></p>
-<p>如果在项目中增加了新的class，重建autoload<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ composer dump-autoload</span><br></pre></td></tr></table></figure></p>
-<p>安装成功，在根目录下出现<code>vender</code>文件夹和<code>compser.lock</code>文件</p>
-<h3 id="PHPStorm中配置PHPUnit"><a href="#PHPStorm中配置PHPUnit" class="headerlink" title="PHPStorm中配置PHPUnit"></a>PHPStorm中配置PHPUnit</h3><p>打开<code>文件-》设置</code><br>选择<code>语言与框架-》PHP</code>，设置<code>Interpreter</code></p>
-<p><img src="http://ww3.sinaimg.cn/mw690/6cad6f69gw1f440yzhsj1j20su0jiq40.jpg" alt="此处输入图片的描述"></p>
-<p>选择<code>语言与框架-》PHP-》PHPUnit</code>，选择<code>autoloader</code>地址</p>
-<p><img src="http://ww2.sinaimg.cn/mw690/6cad6f69gw1f440yz7o8zj20su0jitae.jpg" alt="此处输入图片的描述"></p>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>这里我只测试了Controller<br>在根目录下新建Test文件夹，用来存放测试文件，<br>新建<code>IndexControllerTest.php</code>用来测试<code>IndexController</code><br>在<code>IndexController</code>中创建一个<code>hello</code>方法<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	$this-&gt;show(<span class="string">"hello world"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>测试代码如下，测试<code>hello</code>方法<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Home</span>\<span class="title">Controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexControllerTest</span> <span class="keyword">extends</span> \<span class="title">PHPUnit_Framework_TestCase</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">use</span> \<span class="title">Think</span>\<span class="title">PhpUnit</span>; <span class="comment">// 只有控制器测试类才需要它</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setupBeforeClass</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="comment">// 下面四行代码模拟出一个应用实例, 每一行都很关键, 需正确设置参数</span></span><br><span class="line">        <span class="keyword">self</span>::$app = <span class="keyword">new</span> \Think\PhpunitHelper();</span><br><span class="line">        <span class="keyword">self</span>::$app-&gt;setMVC(<span class="string">'domain.com'</span>,<span class="string">'Home'</span>,<span class="string">'Index'</span>);</span><br><span class="line">        <span class="keyword">self</span>::$app-&gt;setTestConfig([<span class="string">'DB_NAME'</span>=&gt;<span class="string">'test'</span>, <span class="string">'DB_HOST'</span>=&gt;<span class="string">'127.0.0.1'</span>,]); <span class="comment">// 一定要设置一个测试用的数据库,避免测试过程破坏生产数据</span></span><br><span class="line">        <span class="keyword">self</span>::$app-&gt;start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 控制器action输出测试示例</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testHello</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        $output = $this-&gt;execAction(<span class="string">'hello'</span>);</span><br><span class="line">        $this-&gt;assertEquals(<span class="string">'hello world'</span>,$output);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>测试数据库与Thinkphp本身配置的数据库要不同，否则会报错<br>右击运行测试程序，测试成功</p>
-<p><img src="http://ww1.sinaimg.cn/mw690/6cad6f69gw1f442ho5svej20od0913yv.jpg" alt="此处输入图片的描述"></p>
+<p>启动Apache<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo /etc/init.d/apache2 start</span><br></pre></td></tr></table></figure></p>
+<h4 id="查看PHP信息"><a href="#查看PHP信息" class="headerlink" title="查看PHP信息"></a>查看PHP信息</h4><h5 id="通过浏览器查看"><a href="#通过浏览器查看" class="headerlink" title="通过浏览器查看"></a>通过浏览器查看</h5><p>在html目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$sudo vi test.php  </span><br><span class="line">//或</span><br><span class="line">$sudo gedit test.php</span><br></pre></td></tr></table></figure></p>
+<p>输入<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">   phpinfo();</span><br></pre></td></tr></table></figure></p>
+<p>浏览器访问<code>127.0.0.1/test.php</code>，如果本地没有图形界面，可以通过外网访问<br><img src="http://ww1.sinaimg.cn/mw690/6cad6f69gw1f468ljoixgj20re0jqtdg.jpg" alt="此处输入图片的描述"></p>
+<h5 id="直接通过命令行查看"><a href="#直接通过命令行查看" class="headerlink" title="直接通过命令行查看"></a>直接通过命令行查看</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$php -r &quot;phpinfo();&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="安装Yar扩展"><a href="#安装Yar扩展" class="headerlink" title="安装Yar扩展"></a>安装Yar扩展</h3><h4 id="确认-phpize-是否安装"><a href="#确认-phpize-是否安装" class="headerlink" title="确认 phpize 是否安装"></a>确认 <a href="http://php.net/manual/zh/install.pecl.phpize.php" target="_blank" rel="external">phpize</a> 是否安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$sudo find / -name phpize</span><br><span class="line"></span><br><span class="line">//如果没有安装，可以通过开发版来安装该扩展</span><br><span class="line">$sudo apt-get install php5-dev</span><br></pre></td></tr></table></figure>
+<h4 id="安装-msgpack"><a href="#安装-msgpack" class="headerlink" title="安装 msgpack"></a>安装 <a href="https://pecl.php.net/package/msgpack" target="_blank" rel="external">msgpack</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo pecl install msgpack</span><br></pre></td></tr></table></figure>
+<p>会提示如下错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Failed to download pecl/msgpack within preferred state &quot;stable&quot;, latest release is version 2.0.1, stability &quot;beta&quot;, use &quot;channel://pecl.php.net/msgpack-2.0.1&quot; to install</span><br><span class="line">install failed</span><br></pre></td></tr></table></figure></p>
+<p>提示中提到最新版本为2.0.1，但访问<a href="https://pecl.php.net/package-search.php搜索msgpack发现，最新版本要求PHP" target="_blank" rel="external">https://pecl.php.net/package-search.php搜索msgpack发现，最新版本要求PHP</a> 7.0，而我的版本是PHP 5.6，所以只能安装msgpack-0.5.7<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo pecl install channel://pecl.php.net/msgpack-0.5.7</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://ww3.sinaimg.cn/mw690/6cad6f69gw1f468lk95h2j20wm0dsn33.jpg" alt="此处输入图片的描述"><br>安装成功，提示如下,要求配置php.ini，这里先放一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">configuration option &quot;php_ini&quot; is not set to php.ini location</span><br><span class="line">You should add &quot;extension=msgpack.so&quot; to php.ini</span><br></pre></td></tr></table></figure></p>
+<h4 id="安装-yar"><a href="#安装-yar" class="headerlink" title="安装 yar"></a>安装 <a href="https://pecl.php.net/package/yar" target="_blank" rel="external">yar</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$sudo pecl install yar</span><br><span class="line">Enable Msgpack Supports [no] :  //填yes</span><br></pre></td></tr></table></figure>
+<p>错误提示如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">configure: error: Please reinstall the libcurl distribution - easy.h should be in &lt;curl-dir&gt;/include/curl/</span><br><span class="line">ERROR: `/tmp/pear/temp/yar/configure --enable-msgpack=yes&apos; failed</span><br></pre></td></tr></table></figure></p>
+<p>可以通过以下命令解决这个问题，并重新安装yar</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo apt-get install libcurl4-gnutls-dev</span><br></pre></td></tr></table></figure>
+<p>安装成功，最后提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">configuration option &quot;php_ini&quot; is not set to php.ini location</span><br><span class="line">You should add &quot;extension=yar.so&quot; to php.ini</span><br></pre></td></tr></table></figure></p>
+<p>浏览器访问<code>127.0.0.1/test.php</code>，查看php信息并没有看到<code>msgpack</code>和<code>yar</code>，需要进一步配置</p>
+<h4 id="PHP扩展配置"><a href="#PHP扩展配置" class="headerlink" title="PHP扩展配置"></a>PHP扩展配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$sudo find / -name msgpack.so</span><br><span class="line">/usr/lib/php5/20131226/msgpack.so</span><br><span class="line"></span><br><span class="line">$sudo find / -name yar.so</span><br><span class="line">/usr/lib/php5/20131226/yar.so说明``msgpack``和``yar``都已经安装成功</span><br></pre></td></tr></table></figure>
+<p>说明<code>msgpack</code>和<code>yar</code>都已经安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/php5/mods-available</span><br><span class="line">//可以看到扩展的配置文件</span><br></pre></td></tr></table></figure>
+<h5 id="添加扩展配置文件"><a href="#添加扩展配置文件" class="headerlink" title="添加扩展配置文件"></a>添加扩展配置文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$sudo vi msgpack.ini</span><br><span class="line"></span><br><span class="line">; configuration for php msgpack module</span><br><span class="line">; priority=20</span><br><span class="line">extension=msgpack.so</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$sudo vi yar.ini</span><br><span class="line"></span><br><span class="line">; configuration for php yar module</span><br><span class="line">; priority=40</span><br><span class="line">extension=yar.so</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>[注]</strong>：因为<code>yar</code>依赖于<code>json</code>和<code>msgpack</code>，所以<code>yar</code>的<code>priority</code>的值要大一点</p>
+</blockquote>
+<h5 id="添加软链接"><a href="#添加软链接" class="headerlink" title="添加软链接"></a>添加软链接</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/php5/apache2/conf.d</span><br><span class="line">ls -all</span><br></pre></td></tr></table></figure>
+<p>可以看到该目录下都是软链接，在该目录下添加上面两个配置文件的软链接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$sudo ln -s ../../mods-available/msgpack.ini 20-msgpack.ini</span><br><span class="line">$sudo ln -s ../../mods-available/yar.ini 40-yar.ini</span><br></pre></td></tr></table></figure></p>
+<p>重启Apache，浏览器访问<code>127.0.0.1/test.php</code>查看<code>phpinfo</code>，可以看到已有<code>yar</code>和<code>msgpack</code>扩展，说明配置成功</p>
+<p><img src="http://ww3.sinaimg.cn/mw690/6cad6f69gw1f468lkma54j20wo0520u4.jpg" alt="此处输入图片的描述"></p>
+<blockquote>
+<p><strong>[注]</strong>：应该修改/etc/php5/apache2下的配置文件而不是/etc/php5/cli下的</p>
+</blockquote>
 
       
     </div>
@@ -417,9 +455,13 @@ Thinkphp版本：3.2.3安装工具： composerPHPUnit：snowair/think-phpunitPHP
           
             <a href="/tags/Thinkphp/" rel="tag">#Thinkphp</a>
           
-            <a href="/tags/PHPUnit/" rel="tag">#PHPUnit</a>
+            <a href="/tags/Ubuntu/" rel="tag">#Ubuntu</a>
           
-            <a href="/tags/单元测试/" rel="tag">#单元测试</a>
+            <a href="/tags/PHP扩展/" rel="tag">#PHP扩展</a>
+          
+            <a href="/tags/YAR/" rel="tag">#YAR</a>
+          
+            <a href="/tags/RPC/" rel="tag">#RPC</a>
           
         </div>
       
@@ -428,17 +470,13 @@ Thinkphp版本：3.2.3安装工具： composerPHPUnit：snowair/think-phpunitPHP
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/17/Ubuntu指南——PPA介绍/" rel="next" title="Ubuntu指南——PPA介绍">
-                <i class="fa fa-chevron-left"></i> Ubuntu指南——PPA介绍
+              <a href="/2016/05/22/Thinkphp：配置PHPUnit单元测试/" rel="next" title="Thinkphp：配置PHPUnit单元测试">
+                <i class="fa fa-chevron-left"></i> Thinkphp：配置PHPUnit单元测试
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/24/安装PHP扩展：YAR——Ubuntu篇/" rel="prev" title="安装PHP扩展：YAR——Ubuntu篇">
-                安装PHP扩展：YAR——Ubuntu篇 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -464,8 +502,8 @@ Thinkphp版本：3.2.3安装工具： composerPHPUnit：snowair/think-phpunitPHP
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/22/Thinkphp：配置PHPUnit单元测试/"
-           data-title="Thinkphp：配置PHPUnit单元测试" data-url="http://dffuture.github.io/2016/05/22/Thinkphp：配置PHPUnit单元测试/">
+      <div class="ds-thread" data-thread-key="2016/05/24/安装PHP扩展：YAR——Ubuntu篇/"
+           data-title="安装PHP扩展：YAR——Ubuntu篇" data-url="http://dffuture.github.io/2016/05/24/安装PHP扩展：YAR——Ubuntu篇/">
       </div>
     
   </div>
@@ -585,7 +623,7 @@ Thinkphp版本：3.2.3安装工具： composerPHPUnit：snowair/think-phpunitPHP
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Composer安装单元测试辅助类"><span class="nav-number">2.</span> <span class="nav-text">使用Composer安装单元测试辅助类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHPStorm中配置PHPUnit"><span class="nav-number">3.</span> <span class="nav-text">PHPStorm中配置PHPUnit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">4.</span> <span class="nav-text">测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LAMP环境"><span class="nav-number">1.1.</span> <span class="nav-text">LAMP环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看PHP信息"><span class="nav-number">1.2.</span> <span class="nav-text">查看PHP信息</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#通过浏览器查看"><span class="nav-number">1.2.1.</span> <span class="nav-text">通过浏览器查看</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#直接通过命令行查看"><span class="nav-number">1.2.2.</span> <span class="nav-text">直接通过命令行查看</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Yar扩展"><span class="nav-number">2.</span> <span class="nav-text">安装Yar扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#确认-phpize-是否安装"><span class="nav-number">2.1.</span> <span class="nav-text">确认 phpize 是否安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-msgpack"><span class="nav-number">2.2.</span> <span class="nav-text">安装 msgpack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-yar"><span class="nav-number">2.3.</span> <span class="nav-text">安装 yar</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PHP扩展配置"><span class="nav-number">2.4.</span> <span class="nav-text">PHP扩展配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#添加扩展配置文件"><span class="nav-number">2.4.1.</span> <span class="nav-text">添加扩展配置文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加软链接"><span class="nav-number">2.4.2.</span> <span class="nav-text">添加软链接</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

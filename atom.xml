@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dffuture.github.io/"/>
-  <updated>2016-05-22T05:00:40.148Z</updated>
+  <updated>2016-05-24T02:08:31.424Z</updated>
   <id>http://dffuture.github.io/</id>
   
   <author>
@@ -14,6 +14,89 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装PHP扩展：YAR——Ubuntu篇</title>
+    <link href="http://dffuture.github.io/2016/05/24/%E5%AE%89%E8%A3%85PHP%E6%89%A9%E5%B1%95%EF%BC%9AYAR%E2%80%94%E2%80%94Ubuntu%E7%AF%87/"/>
+    <id>http://dffuture.github.io/2016/05/24/安装PHP扩展：YAR——Ubuntu篇/</id>
+    <published>2016-05-24T01:56:46.000Z</published>
+    <updated>2016-05-24T02:08:31.424Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://php.net/manual/zh/book.yar.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Yar&lt;/a&gt; 是一个轻量级, 高效的RPC框架, 它提供了一种简单方法来让PHP项目之间可以互相远程调用对方的本地方法. 并且Yar也提供了并行调用的能力. 可以支持同时调用多个远程服务的方法.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;准备&quot;&gt;&lt;a href=&quot;#准备&quot; class=&quot;headerlink&quot; title=&quot;准备&quot;&gt;&lt;/a&gt;准备&lt;/h3&gt;&lt;h4 id=&quot;LAMP环境&quot;&gt;&lt;a href=&quot;#LAMP环境&quot; class=&quot;headerlink&quot; title=&quot;LAMP环境&quot;&gt;&lt;/a&gt;LAMP环境&lt;/h4&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux：Ubuntu 14.04&lt;/li&gt;
+&lt;li&gt;Apache：Apache 2.4&lt;/li&gt;
+&lt;li&gt;Mysql：Mysql 5.5&lt;/li&gt;
+&lt;li&gt;PHP： PHP 5.6&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;启动Apache&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$sudo /etc/init.d/apache2 start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&quot;查看PHP信息&quot;&gt;&lt;a href=&quot;#查看PHP信息&quot; class=&quot;headerlink&quot; title=&quot;查看PHP信息&quot;&gt;&lt;/a&gt;查看PHP信息&lt;/h4&gt;&lt;h5 id=&quot;通过浏览器查看&quot;&gt;&lt;a href=&quot;#通过浏览器查看&quot; class=&quot;headerlink&quot; title=&quot;通过浏览器查看&quot;&gt;&lt;/a&gt;通过浏览器查看&lt;/h5&gt;&lt;p&gt;在html目录下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$sudo vi test.php  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//或&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$sudo gedit test.php&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;输入&lt;br&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   phpinfo();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;浏览器访问&lt;code&gt;127.0.0.1/test.php&lt;/code&gt;，如果本地没有图形界面，可以通过外网访问&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw690/6cad6f69gw1f468ljoixgj20re0jqtdg.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;h5 id=&quot;直接通过命令行查看&quot;&gt;&lt;a href=&quot;#直接通过命令行查看&quot; class=&quot;headerlink&quot; title=&quot;直接通过命令行查看&quot;&gt;&lt;/a&gt;直接通过命令行查看&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$php -r &amp;quot;phpinfo();&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;安装Yar扩展&quot;&gt;&lt;a href=&quot;#安装Yar扩展&quot; class=&quot;headerlink&quot; title=&quot;安装Yar扩展&quot;&gt;&lt;/a&gt;安装Yar扩展&lt;/h3&gt;&lt;h4 id=&quot;确认-phpize-是否安装&quot;&gt;&lt;a href=&quot;#确认-phpize-是否安装&quot; class=&quot;headerlink&quot; title=&quot;确认 phpize 是否安装&quot;&gt;&lt;/a&gt;确认 &lt;a href=&quot;http://php.net/manual/zh/install.pecl.phpize.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;phpize&lt;/a&gt; 是否安装&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$sudo find / -name phpize&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//如果没有安装，可以通过开发版来安装该扩展&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$sudo apt-get install php5-dev&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;安装-msgpack&quot;&gt;&lt;a href=&quot;#安装-msgpack&quot; class=&quot;headerlink&quot; title=&quot;安装 msgpack&quot;&gt;&lt;/a&gt;安装 &lt;a href=&quot;https://pecl.php.net/package/msgpack&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;msgpack&lt;/a&gt;&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$sudo pecl install msgpack&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;会提示如下错误&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Failed to download pecl/msgpack within preferred state &amp;quot;stable&amp;quot;, latest release is version 2.0.1, stability &amp;quot;beta&amp;quot;, use &amp;quot;channel://pecl.php.net/msgpack-2.0.1&amp;quot; to install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;install failed&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;提示中提到最新版本为2.0.1，但访问&lt;a href=&quot;https://pecl.php.net/package-search.php搜索msgpack发现，最新版本要求PHP&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://pecl.php.net/package-search.php搜索msgpack发现，最新版本要求PHP&lt;/a&gt; 7.0，而我的版本是PHP 5.6，所以只能安装msgpack-0.5.7&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$sudo pecl install channel://pecl.php.net/msgpack-0.5.7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw690/6cad6f69gw1f468lk95h2j20wm0dsn33.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;br&gt;安装成功，提示如下,要求配置php.ini，这里先放一下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;configuration option &amp;quot;php_ini&amp;quot; is not set to php.ini location&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;You should add &amp;quot;extension=msgpack.so&amp;quot; to php.ini&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&quot;安装-yar&quot;&gt;&lt;a href=&quot;#安装-yar&quot; class=&quot;headerlink&quot; title=&quot;安装 yar&quot;&gt;&lt;/a&gt;安装 &lt;a href=&quot;https://pecl.php.net/package/yar&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;yar&lt;/a&gt;&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$sudo pecl install yar&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Enable Msgpack Supports [no] :  //填yes&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;错误提示如下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;configure: error: Please reinstall the libcurl distribution - easy.h should be in &amp;lt;curl-dir&amp;gt;/include/curl/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ERROR: `/tmp/pear/temp/yar/configure --enable-msgpack=yes&amp;apos; failed&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;可以通过以下命令解决这个问题，并重新安装yar&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$sudo apt-get install libcurl4-gnutls-dev&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;安装成功，最后提示&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;configuration option &amp;quot;php_ini&amp;quot; is not set to php.ini location&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;You should add &amp;quot;extension=yar.so&amp;quot; to php.ini&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;浏览器访问&lt;code&gt;127.0.0.1/test.php&lt;/code&gt;，查看php信息并没有看到&lt;code&gt;msgpack&lt;/code&gt;和&lt;code&gt;yar&lt;/code&gt;，需要进一步配置&lt;/p&gt;
+&lt;h4 id=&quot;PHP扩展配置&quot;&gt;&lt;a href=&quot;#PHP扩展配置&quot; class=&quot;headerlink&quot; title=&quot;PHP扩展配置&quot;&gt;&lt;/a&gt;PHP扩展配置&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$sudo find / -name msgpack.so&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/usr/lib/php5/20131226/msgpack.so&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$sudo find / -name yar.so&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/usr/lib/php5/20131226/yar.so说明``msgpack``和``yar``都已经安装成功&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;说明&lt;code&gt;msgpack&lt;/code&gt;和&lt;code&gt;yar&lt;/code&gt;都已经安装成功&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd /etc/php5/mods-available&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//可以看到扩展的配置文件&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;添加扩展配置文件&quot;&gt;&lt;a href=&quot;#添加扩展配置文件&quot; class=&quot;headerlink&quot; title=&quot;添加扩展配置文件&quot;&gt;&lt;/a&gt;添加扩展配置文件&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$sudo vi msgpack.ini&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;; configuration for php msgpack module&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;; priority=20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;extension=msgpack.so&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$sudo vi yar.ini&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;; configuration for php yar module&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;; priority=40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;extension=yar.so&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;[注]&lt;/strong&gt;：因为&lt;code&gt;yar&lt;/code&gt;依赖于&lt;code&gt;json&lt;/code&gt;和&lt;code&gt;msgpack&lt;/code&gt;，所以&lt;code&gt;yar&lt;/code&gt;的&lt;code&gt;priority&lt;/code&gt;的值要大一点&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&quot;添加软链接&quot;&gt;&lt;a href=&quot;#添加软链接&quot; class=&quot;headerlink&quot; title=&quot;添加软链接&quot;&gt;&lt;/a&gt;添加软链接&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd /etc/php5/apache2/conf.d&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ls -all&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;可以看到该目录下都是软链接，在该目录下添加上面两个配置文件的软链接&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$sudo ln -s ../../mods-available/msgpack.ini 20-msgpack.ini&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$sudo ln -s ../../mods-available/yar.ini 40-yar.ini&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;重启Apache，浏览器访问&lt;code&gt;127.0.0.1/test.php&lt;/code&gt;查看&lt;code&gt;phpinfo&lt;/code&gt;，可以看到已有&lt;code&gt;yar&lt;/code&gt;和&lt;code&gt;msgpack&lt;/code&gt;扩展，说明配置成功&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw690/6cad6f69gw1f468lkma54j20wo0520u4.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;[注]&lt;/strong&gt;：应该修改/etc/php5/apache2下的配置文件而不是/etc/php5/cli下的&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://php.net/manual/zh/book.yar.php&quot;&gt;Yar&lt;/a&gt; 是一个轻量级, 高效的RPC框架, 它提供了一种简单方法来让PHP项目之间可以互相远程调用对方的本地方法. 并且Yar也提供了并行调用的能力. 可以支持同时调用多个远程服务的方法.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;准备&quot;&gt;&lt;a href=&quot;#准备&quot; class=&quot;headerlink&quot; title=&quot;准备&quot;&gt;&lt;/a&gt;准备&lt;/h3&gt;&lt;h4 id=&quot;LAMP环境&quot;&gt;&lt;a href=&quot;#LAMP环境&quot; class=&quot;headerlink&quot; title=&quot;LAMP环境&quot;&gt;&lt;/a&gt;LAMP环境&lt;/h4&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux：Ubuntu 14.04&lt;/li&gt;
+&lt;li&gt;Apache：Apache 2.4&lt;/li&gt;
+&lt;li&gt;Mysql：Mysql 5.5&lt;/li&gt;
+&lt;li&gt;PHP： PHP 5.6&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="RPC" scheme="http://dffuture.github.io/categories/RPC/"/>
+    
+    
+      <category term="Thinkphp" scheme="http://dffuture.github.io/tags/Thinkphp/"/>
+    
+      <category term="Ubuntu" scheme="http://dffuture.github.io/tags/Ubuntu/"/>
+    
+      <category term="PHP扩展" scheme="http://dffuture.github.io/tags/PHP%E6%89%A9%E5%B1%95/"/>
+    
+      <category term="YAR" scheme="http://dffuture.github.io/tags/YAR/"/>
+    
+      <category term="RPC" scheme="http://dffuture.github.io/tags/RPC/"/>
+    
+  </entry>
   
   <entry>
     <title>Thinkphp：配置PHPUnit单元测试</title>

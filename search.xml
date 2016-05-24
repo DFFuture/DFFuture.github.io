@@ -4,6 +4,55 @@
   
     
     <entry>
+      <title><![CDATA[安装PHP扩展：YAR——Ubuntu篇]]></title>
+      <url>http://dffuture.github.io/2016/05/24/%E5%AE%89%E8%A3%85PHP%E6%89%A9%E5%B1%95%EF%BC%9AYAR%E2%80%94%E2%80%94Ubuntu%E7%AF%87/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p><a href="http://php.net/manual/zh/book.yar.php" target="_blank" rel="external">Yar</a> 是一个轻量级, 高效的RPC框架, 它提供了一种简单方法来让PHP项目之间可以互相远程调用对方的本地方法. 并且Yar也提供了并行调用的能力. 可以支持同时调用多个远程服务的方法.</p>
+</blockquote>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><h4 id="LAMP环境"><a href="#LAMP环境" class="headerlink" title="LAMP环境"></a>LAMP环境</h4><blockquote>
+<ul>
+<li>Linux：Ubuntu 14.04</li>
+<li>Apache：Apache 2.4</li>
+<li>Mysql：Mysql 5.5</li>
+<li>PHP： PHP 5.6</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<p>启动Apache<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo /etc/init.d/apache2 start</span><br></pre></td></tr></table></figure></p>
+<h4 id="查看PHP信息"><a href="#查看PHP信息" class="headerlink" title="查看PHP信息"></a>查看PHP信息</h4><h5 id="通过浏览器查看"><a href="#通过浏览器查看" class="headerlink" title="通过浏览器查看"></a>通过浏览器查看</h5><p>在html目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$sudo vi test.php  </span><br><span class="line">//或</span><br><span class="line">$sudo gedit test.php</span><br></pre></td></tr></table></figure></p>
+<p>输入<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">   phpinfo();</span><br></pre></td></tr></table></figure></p>
+<p>浏览器访问<code>127.0.0.1/test.php</code>，如果本地没有图形界面，可以通过外网访问<br><img src="http://ww1.sinaimg.cn/mw690/6cad6f69gw1f468ljoixgj20re0jqtdg.jpg" alt="此处输入图片的描述"></p>
+<h5 id="直接通过命令行查看"><a href="#直接通过命令行查看" class="headerlink" title="直接通过命令行查看"></a>直接通过命令行查看</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$php -r &quot;phpinfo();&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="安装Yar扩展"><a href="#安装Yar扩展" class="headerlink" title="安装Yar扩展"></a>安装Yar扩展</h3><h4 id="确认-phpize-是否安装"><a href="#确认-phpize-是否安装" class="headerlink" title="确认 phpize 是否安装"></a>确认 <a href="http://php.net/manual/zh/install.pecl.phpize.php" target="_blank" rel="external">phpize</a> 是否安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$sudo find / -name phpize</span><br><span class="line"></span><br><span class="line">//如果没有安装，可以通过开发版来安装该扩展</span><br><span class="line">$sudo apt-get install php5-dev</span><br></pre></td></tr></table></figure>
+<h4 id="安装-msgpack"><a href="#安装-msgpack" class="headerlink" title="安装 msgpack"></a>安装 <a href="https://pecl.php.net/package/msgpack" target="_blank" rel="external">msgpack</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo pecl install msgpack</span><br></pre></td></tr></table></figure>
+<p>会提示如下错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Failed to download pecl/msgpack within preferred state &quot;stable&quot;, latest release is version 2.0.1, stability &quot;beta&quot;, use &quot;channel://pecl.php.net/msgpack-2.0.1&quot; to install</span><br><span class="line">install failed</span><br></pre></td></tr></table></figure></p>
+<p>提示中提到最新版本为2.0.1，但访问<a href="https://pecl.php.net/package-search.php搜索msgpack发现，最新版本要求PHP" target="_blank" rel="external">https://pecl.php.net/package-search.php搜索msgpack发现，最新版本要求PHP</a> 7.0，而我的版本是PHP 5.6，所以只能安装msgpack-0.5.7<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo pecl install channel://pecl.php.net/msgpack-0.5.7</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://ww3.sinaimg.cn/mw690/6cad6f69gw1f468lk95h2j20wm0dsn33.jpg" alt="此处输入图片的描述"><br>安装成功，提示如下,要求配置php.ini，这里先放一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">configuration option &quot;php_ini&quot; is not set to php.ini location</span><br><span class="line">You should add &quot;extension=msgpack.so&quot; to php.ini</span><br></pre></td></tr></table></figure></p>
+<h4 id="安装-yar"><a href="#安装-yar" class="headerlink" title="安装 yar"></a>安装 <a href="https://pecl.php.net/package/yar" target="_blank" rel="external">yar</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$sudo pecl install yar</span><br><span class="line">Enable Msgpack Supports [no] :  //填yes</span><br></pre></td></tr></table></figure>
+<p>错误提示如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">configure: error: Please reinstall the libcurl distribution - easy.h should be in &lt;curl-dir&gt;/include/curl/</span><br><span class="line">ERROR: `/tmp/pear/temp/yar/configure --enable-msgpack=yes&apos; failed</span><br></pre></td></tr></table></figure></p>
+<p>可以通过以下命令解决这个问题，并重新安装yar</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo apt-get install libcurl4-gnutls-dev</span><br></pre></td></tr></table></figure>
+<p>安装成功，最后提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">configuration option &quot;php_ini&quot; is not set to php.ini location</span><br><span class="line">You should add &quot;extension=yar.so&quot; to php.ini</span><br></pre></td></tr></table></figure></p>
+<p>浏览器访问<code>127.0.0.1/test.php</code>，查看php信息并没有看到<code>msgpack</code>和<code>yar</code>，需要进一步配置</p>
+<h4 id="PHP扩展配置"><a href="#PHP扩展配置" class="headerlink" title="PHP扩展配置"></a>PHP扩展配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$sudo find / -name msgpack.so</span><br><span class="line">/usr/lib/php5/20131226/msgpack.so</span><br><span class="line"></span><br><span class="line">$sudo find / -name yar.so</span><br><span class="line">/usr/lib/php5/20131226/yar.so说明``msgpack``和``yar``都已经安装成功</span><br></pre></td></tr></table></figure>
+<p>说明<code>msgpack</code>和<code>yar</code>都已经安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/php5/mods-available</span><br><span class="line">//可以看到扩展的配置文件</span><br></pre></td></tr></table></figure>
+<h5 id="添加扩展配置文件"><a href="#添加扩展配置文件" class="headerlink" title="添加扩展配置文件"></a>添加扩展配置文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$sudo vi msgpack.ini</span><br><span class="line"></span><br><span class="line">; configuration for php msgpack module</span><br><span class="line">; priority=20</span><br><span class="line">extension=msgpack.so</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$sudo vi yar.ini</span><br><span class="line"></span><br><span class="line">; configuration for php yar module</span><br><span class="line">; priority=40</span><br><span class="line">extension=yar.so</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>[注]</strong>：因为<code>yar</code>依赖于<code>json</code>和<code>msgpack</code>，所以<code>yar</code>的<code>priority</code>的值要大一点</p>
+</blockquote>
+<h5 id="添加软链接"><a href="#添加软链接" class="headerlink" title="添加软链接"></a>添加软链接</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/php5/apache2/conf.d</span><br><span class="line">ls -all</span><br></pre></td></tr></table></figure>
+<p>可以看到该目录下都是软链接，在该目录下添加上面两个配置文件的软链接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$sudo ln -s ../../mods-available/msgpack.ini 20-msgpack.ini</span><br><span class="line">$sudo ln -s ../../mods-available/yar.ini 40-yar.ini</span><br></pre></td></tr></table></figure></p>
+<p>重启Apache，浏览器访问<code>127.0.0.1/test.php</code>查看<code>phpinfo</code>，可以看到已有<code>yar</code>和<code>msgpack</code>扩展，说明配置成功</p>
+<p><img src="http://ww3.sinaimg.cn/mw690/6cad6f69gw1f468lkma54j20wo0520u4.jpg" alt="此处输入图片的描述"></p>
+<blockquote>
+<p><strong>[注]</strong>：应该修改/etc/php5/apache2下的配置文件而不是/etc/php5/cli下的</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Thinkphp：配置PHPUnit单元测试]]></title>
       <url>http://dffuture.github.io/2016/05/22/Thinkphp%EF%BC%9A%E9%85%8D%E7%BD%AEPHPUnit%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</url>
       <content type="html"><![CDATA[<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><blockquote>
