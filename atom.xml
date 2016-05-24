@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dffuture.github.io/"/>
-  <updated>2016-05-24T02:16:56.320Z</updated>
+  <updated>2016-05-24T02:21:36.507Z</updated>
   <id>http://dffuture.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://dffuture.github.io/2016/05/24/%E5%AE%89%E8%A3%85PHP%E6%89%A9%E5%B1%95%EF%BC%9AYAR%E2%80%94%E2%80%94Ubuntu%E7%AF%87/"/>
     <id>http://dffuture.github.io/2016/05/24/安装PHP扩展：YAR——Ubuntu篇/</id>
     <published>2016-05-24T01:56:46.000Z</published>
-    <updated>2016-05-24T02:16:56.320Z</updated>
+    <updated>2016-05-24T02:21:36.507Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;http://php.net/manual/zh/book.yar.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Yar&lt;/a&gt; 是一个轻量级, 高效的RPC框架, 它提供了一种简单方法来让PHP项目之间可以互相远程调用对方的本地方法. 并且Yar也提供了并行调用的能力. 可以支持同时调用多个远程服务的方法.&lt;/p&gt;
@@ -61,7 +61,7 @@
 &lt;h5 id=&quot;添加软链接&quot;&gt;&lt;a href=&quot;#添加软链接&quot; class=&quot;headerlink&quot; title=&quot;添加软链接&quot;&gt;&lt;/a&gt;添加软链接&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd /etc/php5/apache2/conf.d&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ls -all&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;可以看到该目录下都是软链接，在该目录下添加上面两个配置文件的软链接&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$sudo ln -s ../../mods-available/msgpack.ini 20-msgpack.ini&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$sudo ln -s ../../mods-available/yar.ini 40-yar.ini&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;重启Apache，浏览器访问&lt;code&gt;127.0.0.1/test.php&lt;/code&gt;查看&lt;code&gt;phpinfo&lt;/code&gt;，可以看到已有&lt;code&gt;yar&lt;/code&gt;和&lt;code&gt;msgpack&lt;/code&gt;扩展，说明配置成功&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw690/6cad6f69gw1f468lkma54j20wo0520u4.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6cad6f69gw1f468lkma54j20wo0520u4.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;[注]&lt;/strong&gt;：应该修改/etc/php5/apache2下的配置文件而不是/etc/php5/cli下的&lt;/p&gt;
 &lt;/blockquote&gt;
